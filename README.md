@@ -1,10 +1,10 @@
-# 🧬 Biomedical Image Segmentation with Flexible UNet Variants
+#  Biomedical Image Segmentation with Flexible UNet Variants
 
 Real-world biomedical imaging tasks often face challenges of dataset scarcity, imbalance, and variability across modalities. This repository provides an **end-to-end biomedical image segmentation pipeline** built on UNet and its latest variants. The aim is to show that while **UNets are powerful segmentation models**, combining them with flexible loss functions and augmentation strategies improves generalization across diverse medical datasets.
 
 ---
 
-## 📌 Features
+##  Features
 
 - Support for **multiple UNet variants**: UNet, Attention UNet, UNet++, DC-UNet, Half-UNet  
 - Flexible **loss functions**: Cross-Entropy (CE), Dice Loss, Focal Cross-Entropy, Tversky Loss, Boundary Dice Loss  
@@ -16,7 +16,7 @@ Real-world biomedical imaging tasks often face challenges of dataset scarcity, i
 
 ---
 
-## ⚙️ Installation
+##  Installation
 
 Clone the repository and install dependencies:  
 Run `git clone <repo_url>` then `cd biomedical-image-segmentation`  
@@ -24,7 +24,7 @@ Run `pip install -r requirements.txt`
 
 ---
 
-## 📦 Datasets
+##  Datasets
 
 This project was trained and validated on three datasets:  
 - ISIC (Skin Lesion Segmentation) – public dataset, not included here  
@@ -53,8 +53,9 @@ datasets/
 
 ##  Training
 
-Train models with configurable architecture and loss function. Example:  
-Run `python train.py --model attention_unet --loss dice --dataset ISIC`  
+Train models with configurable architecture and loss function. 
+Example:  
+Run `python scripts/train.py --model attention_unet --loss dice --dataset ISIC`  
 
 Options:  
 - `--model`: unet, attention_unet, unetpp, dcunet, halfunet etc
@@ -64,9 +65,9 @@ Options:
 ---
 
 ## 🔍 Validation
-
-Run `python evaluate.py --model unetpp --dataset ACDC`  
-This outputs F1 and Dice score 
+Example:
+Run `python scripts/evaluate2.py --model unetplusplus --dataset ACDC`  
+This outputs F1 and Dice score across thresholds of 0.5,0.6,0.7,0.8,0.9.
 
 ---
 
@@ -80,45 +81,8 @@ This outputs F1 and Dice score
 
 ---
 
-##  Sample Segmentation results from training UNET on these three datasets with tailored loss functions and augmentations
 
-Below are sample input images and their predicted segmentations across the three datasets.
-
-<table>
-  <tr>
-    <th>ISIC Input</th>
-    <th>ISIC Prediction</th>
-  </tr>
-  <tr>
-    <td><img src="results/isic_input.png" width="250"></td>
-    <td><img src="results/isic_pred.png" width="250"></td>
-  </tr>
-  <tr>
-    <th>ACDC Input</th>
-    <th>ACDC Prediction</th>
-  </tr>
-  <tr>
-    <td><img src="results/acdc_input.png" width="250"></td>
-    <td><img src="results/acdc_pred.png" width="250"></td>
-  </tr>
-  <tr>
-    <th>StemCell Input</th>
-    <th>StemCell Prediction</th>
-  </tr>
-  <tr>
-    <td><img src="results/stemcell_input.png" width="250"></td>
-    <td><img src="results/stemcell_pred.png" width="250"></td>
-  </tr>
-</table>
-
-
----
-
-
-
----
-
-## 📜 Cite this Work
+##  Cite this Work
 
 If you use or build upon this work, please cite:  
 
